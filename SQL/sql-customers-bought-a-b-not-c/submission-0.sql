@@ -1,0 +1,2 @@
+-- Write your query below
+SELECT c.customer_id , c.customer_name From customers c  Where c.customer_id in (select customer_id From orders Where product_name = 'A') AND customer_id in (select customer_id From orders where product_name = 'B') AND customer_id NOT in (select customer_id From orders where product_name = 'C') Order by customer_name;
